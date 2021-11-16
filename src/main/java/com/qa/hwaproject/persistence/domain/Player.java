@@ -19,4 +19,8 @@ public class Player {
 	
 	@Column(name = "player_nationality", unique = true, nullable = false)
 	private String playerNationality;
+	
+	@Column(name = "player_position", unique = true, nullable = false)
+	private String playerPosition;
+	
 }
