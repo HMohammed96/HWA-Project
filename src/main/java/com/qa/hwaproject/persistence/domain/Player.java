@@ -23,4 +23,8 @@ public class Player {
 	@Column(name = "player_position", unique = true, nullable = false)
 	private String playerPosition;
 	
+	@Column(name = "player_overall_rating", unique = true, nullable = false)
+	private double playerOverallRating;
+	
+	
 }
