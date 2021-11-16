@@ -26,5 +26,8 @@ public class Player {
 	@Column(name = "player_overall_rating", unique = true, nullable = false)
 	private double playerOverallRating;
 	
+	@Column(name = "player_value", unique = true, nullable = false)
+	private float playerValue;
+	
 	
 }
