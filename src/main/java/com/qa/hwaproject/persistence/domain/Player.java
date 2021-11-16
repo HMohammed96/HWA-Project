@@ -1,10 +1,12 @@
 package com.qa.hwaproject.persistence.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Player {
 
 	@Id
@@ -16,6 +18,9 @@ public class Player {
 	
 	@Column(name = "player_age", unique = true, nullable = false)
 	private double playerAge;
+	
+	@Column(name = "club_id", unique = true, nullable = false)
+	private long clubId;
 	
 	@Column(name = "player_nationality", unique = true, nullable = false)
 	private String playerNationality;
