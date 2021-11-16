@@ -6,7 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Player {
 
 	@Id
@@ -35,4 +42,15 @@ public class Player {
 	private float playerValue;
 	
 	
+
+	public Player(long playerName, double playerAge, long clubId, String playerNationality, String playerPosition,
+			double playerOverallRating, float playerValue) {
+		this.playerName = playerName;
+		this.playerAge = playerAge;
+		this.clubId = clubId;
+		this.playerNationality = playerNationality;
+		this.playerPosition = playerPosition;
+		this.playerOverallRating = playerOverallRating;
+		this.playerValue = playerValue;
+	}
 }
