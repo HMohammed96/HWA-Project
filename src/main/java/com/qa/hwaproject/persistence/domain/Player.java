@@ -13,4 +13,7 @@ public class Player {
 	
 	@Column(name = "player_name", unique = true, nullable = false)
 	private long playerName;
+	
+	@Column(name = "player_age", unique = true, nullable = false)
+	private double playerAge;
 }
