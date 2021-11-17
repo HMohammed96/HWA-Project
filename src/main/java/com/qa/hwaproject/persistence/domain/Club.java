@@ -35,4 +35,14 @@ public class Club {
 	@Column(name = "club_value", nullable = false)
 	private double clubValue;
 
+	public Club(String clubName, String clubLeague, String clubLocation, String clubStadium, double clubValue) {
+		super();
+		this.clubName = clubName;
+		this.clubLeague = clubLeague;
+		this.clubLocation = clubLocation;
+		this.clubStadium = clubStadium;
+		this.clubValue = clubValue;
+	}
+
+	
 }

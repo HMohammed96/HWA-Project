@@ -1,4 +1,4 @@
-package com.qa.hwaproject.com.exceptions;
+package com.qa.hwaproject.exceptions;
 
 import javax.persistence.EntityNotFoundException;
 

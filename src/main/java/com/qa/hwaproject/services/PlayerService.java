@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.qa.hwaproject.exceptions.PlayerNotFoundException;
 import com.qa.hwaproject.persistence.domain.Player;
-import com.qa.hwaproject.persistence.repo.PlayerRepo;
+import com.qa.hwaproject.persistence.repos.PlayerRepo;
 
 @Service
 public class PlayerService {
