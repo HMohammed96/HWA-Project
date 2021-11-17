@@ -36,4 +36,10 @@ public class ClubController {
 	public ResponseEntity<List<Club>> getAll() {
 		return new ResponseEntity<List<Club>>(this.service.getAll(), HttpStatus.OK);
 	}
+	
+	// READ BY ID
+	@GetMapping("getById/{id}")
+	public ResponseEntity<Club> getById(@PathVariable Long id) {
+		return new ResponseEntity<Club>(this.service.getById(id), HttpStatus.OK);
+	}
 }
