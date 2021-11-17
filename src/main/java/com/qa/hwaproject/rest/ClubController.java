@@ -30,4 +30,10 @@ public class ClubController {
 	public ResponseEntity<Club> addClub(@RequestBody Club club) {
 		return new ResponseEntity<Club>(this.service.addClub(club), HttpStatus.CREATED);
 	}
+	
+	// READ
+	@GetMapping("/getAll")
+	public ResponseEntity<List<Club>> getAll() {
+		return new ResponseEntity<List<Club>>(this.service.getAll(), HttpStatus.OK);
+	}
 }
