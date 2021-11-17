@@ -42,4 +42,10 @@ public class ClubController {
 	public ResponseEntity<Club> getById(@PathVariable Long id) {
 		return new ResponseEntity<Club>(this.service.getById(id), HttpStatus.OK);
 	}
+	
+	// UPDATE
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Club> updateClub(@PathVariable Long id, @RequestBody Club club) {
+		return new ResponseEntity<Club>(this.service.updateClub(id, club), HttpStatus.ACCEPTED);
+	}
 }
