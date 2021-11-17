@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,13 +22,10 @@ public class Player {
 	private long id;
 	
 	@Column(name = "player_name", unique = true, nullable = false)
-	private long playerName;
+	private String playerName;
 	
 	@Column(name = "player_age", unique = true, nullable = false)
 	private double playerAge;
-	
-	@Column(name = "club_id", unique = true, nullable = false)
-	private long clubId;
 	
 	@Column(name = "player_nationality", unique = true, nullable = false)
 	private String playerNationality;
@@ -41,16 +39,19 @@ public class Player {
 	@Column(name = "player_value", unique = true, nullable = false)
 	private float playerValue;
 	
-	
+	@ManyToOne
+	private Club club;
 
-	public Player(long playerName, double playerAge, long clubId, String playerNationality, String playerPosition,
-			double playerOverallRating, float playerValue) {
+	public Player(String playerName, double playerAge, String playerNationality, String playerPosition,
+			double playerOverallRating, float playerValue, Club club) {
+		super();
 		this.playerName = playerName;
 		this.playerAge = playerAge;
-		this.clubId = clubId;
 		this.playerNationality = playerNationality;
 		this.playerPosition = playerPosition;
 		this.playerOverallRating = playerOverallRating;
 		this.playerValue = playerValue;
+		this.club = club;
 	}
+
 }
