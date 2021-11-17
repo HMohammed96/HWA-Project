@@ -48,4 +48,14 @@ public class ClubController {
 	public ResponseEntity<Club> updateClub(@PathVariable Long id, @RequestBody Club club) {
 		return new ResponseEntity<Club>(this.service.updateClub(id, club), HttpStatus.ACCEPTED);
 	}
+	
+	// DELETE
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Club> removeClub (@PathVariable Long id) {
+		if (this.service.removeClub(id)) {
+			return new ResponseEntity<Club>(HttpStatus.NO_CONTENT);
+		} else {
+			return new ResponseEntity<Club>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 }
