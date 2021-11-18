@@ -8,5 +8,4 @@ CREATE TABLE `player` (
 	`player_nationality` VARCHAR(255) NOT NULL
 	`player_position` VARCHAR(255) NOT NULL
 	`player_overall_rating` BIGINT NOT NULL
-	`player_value` FLOAT NOT NULL
 );

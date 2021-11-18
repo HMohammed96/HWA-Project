@@ -37,7 +37,6 @@ public class PlayerService {
 		existing.setPlayerNationality(player.getPlayerNationality());
 		existing.setPlayerPosition(player.getPlayerPosition());
 		existing.setPlayerOverallRating(player.getPlayerOverallRating());
-		existing.setPlayerValue(player.getPlayerValue());
 		existing.setClub(player.getClub());
 		
 		return this.repo.saveAndFlush(existing);

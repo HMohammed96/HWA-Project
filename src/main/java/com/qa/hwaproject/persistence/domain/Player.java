@@ -36,22 +36,17 @@ public class Player {
 	@Column(name = "player_overall_rating", unique = true, nullable = false)
 	private double playerOverallRating;
 	
-	@Column(name = "player_value", unique = true, nullable = false)
-	private float playerValue;
-	
 	@ManyToOne
 	private Club club;
 
 	public Player(String playerName, double playerAge, String playerNationality, String playerPosition,
-			double playerOverallRating, float playerValue, Club club) {
+			double playerOverallRating, Club club) {
 		super();
 		this.playerName = playerName;
 		this.playerAge = playerAge;
 		this.playerNationality = playerNationality;
 		this.playerPosition = playerPosition;
 		this.playerOverallRating = playerOverallRating;
-		this.playerValue = playerValue;
 		this.club = club;
 	}
-
 }
