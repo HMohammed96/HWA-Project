@@ -43,6 +43,4 @@ public class Club {
 		this.clubStadium = clubStadium;
 		this.clubValue = clubValue;
 	}
-
-	
 }

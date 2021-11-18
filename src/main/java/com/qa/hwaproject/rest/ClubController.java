@@ -44,6 +44,18 @@ public class ClubController {
 		return new ResponseEntity<Club>(this.service.getById(id), HttpStatus.OK);
 	}
 	
+	// FIND CLUB BY LEAGUE
+	@GetMapping("/findClubByLeague/{clubLeague}")
+	public ResponseEntity<List<Club>> findClubByLeague(String clubLeague) {
+		return new ResponseEntity<List<Club>>(this.service.findClubByLeague(clubLeague), HttpStatus.OK);
+	}
+	
+	// FIND CLUB BY LOCATION
+	@GetMapping("/findClubByLocation/{clubLocation}")
+	public ResponseEntity<List<Club>> findClubByLocation(String clubLocation) {
+		return new ResponseEntity<List<Club>>(this.service.findClubByLocation(clubLocation), HttpStatus.OK);
+	}
+	
 	// UPDATE
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Club> updateClub(@PathVariable Long id, @RequestBody Club club) {
