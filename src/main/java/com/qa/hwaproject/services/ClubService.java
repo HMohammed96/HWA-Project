@@ -36,7 +36,6 @@ public class ClubService {
 		existing.setClubLeague(club.getClubLeague());
 		existing.setClubLocation(club.getClubLocation());
 		existing.setClubStadium(club.getClubStadium());
-		existing.setClubValue(club.getClubValue());
 		
 		return this.repo.saveAndFlush(existing);
 	}
@@ -48,11 +47,12 @@ public class ClubService {
 	}
 	
 	public List<Club> findClubByLeague(String clubLeague) {
-		return this.repo.findClubByLeague(clubLeague);
+		System.out.println(clubLeague);
+		return this.repo.findClubByClubLeague(clubLeague);
 	}
 	
 	public List<Club> findClubByLocation(String clubLocation) {
-		return this.repo.findClubByLocation(clubLocation);
+		return this.repo.findClubByClubLocation(clubLocation);
 	}
 
 }

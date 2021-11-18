@@ -1,5 +1,5 @@
-INSERT INTO `player`
-		(`club_id`, `player_name`, `player_age`, `player_nationality`, `player_position`, `player_overall_rating`, `player_value`)
+INSERT INTO player
+		(id, player_name, player_age, player_nationality, player_position, player_overall_rating, player_value, club_id)
 			
 VALUES
-		(3491, 'cristiano ronaldo', 32, 'portugal', 'striker', 94, 95000000f);
+		(1, 'cristiano ronaldo', 32, 'portugal', 'striker', 94, 95000000f, 1);

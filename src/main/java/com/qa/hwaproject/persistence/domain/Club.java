@@ -20,7 +20,7 @@ public class Club {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "club_name", unique = true, nullable = false)
+	@Column(name = "club_name", nullable = false)
 	private String clubName;
 	
 	@Column(name = "club_league", nullable = false)
@@ -31,16 +31,15 @@ public class Club {
 	
 	@Column(name = "club_stadium", nullable = false)
 	private String clubStadium;
-	
-	@Column(name = "club_value", nullable = false)
-	private double clubValue;
 
-	public Club(String clubName, String clubLeague, String clubLocation, String clubStadium, double clubValue) {
+	public Club(String clubName, String clubLeague, String clubLocation, String clubStadium) {
 		super();
 		this.clubName = clubName;
 		this.clubLeague = clubLeague;
 		this.clubLocation = clubLocation;
 		this.clubStadium = clubStadium;
-		this.clubValue = clubValue;
 	}
+	
+
+
 }

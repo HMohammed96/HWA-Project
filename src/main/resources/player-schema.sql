@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `player` CASCADE;
-CREATE TABLE `player`
-(
+
+CREATE TABLE `player` (
 	`player_id` BIGINT PRIMARY KEY AUTO_INCREMENT,
 	`club_id` BIGINT FOREIGN KEY,
 	`player_name` VARCHAR(255) NOT NULL,

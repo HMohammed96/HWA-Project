@@ -45,8 +45,8 @@ public class ClubController {
 	}
 	
 	// FIND CLUB BY LEAGUE
-	@GetMapping("/findClubByLeague/{clubLeague}")
-	public ResponseEntity<List<Club>> findClubByLeague(String clubLeague) {
+	@GetMapping("/league/{clubLeague}")
+	public ResponseEntity<List<Club>> findClubByClubLeague(@PathVariable String clubLeague) {
 		return new ResponseEntity<List<Club>>(this.service.findClubByLeague(clubLeague), HttpStatus.OK);
 	}
 	

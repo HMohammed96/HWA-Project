@@ -1,5 +1,5 @@
-INSERT INTO `club`
-		(`club_name`, `club_league`, `club_location`, `club_stadium`, `club_value`)
+INSERT INTO club
+		(id, club_name, club_league, club_location, club_stadium)
 			
 VALUES
-		('real madrid', 'la liga', 'spain', 'estadio santiago bernabeu', 3000000000);
+		(1, 'real madrid', 'la liga', 'spain', 'estadio santiago bernabeu');

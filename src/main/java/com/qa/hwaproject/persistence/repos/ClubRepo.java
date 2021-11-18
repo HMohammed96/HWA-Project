@@ -9,10 +9,8 @@ import com.qa.hwaproject.persistence.domain.Club;
 
 public interface ClubRepo extends JpaRepository<Club, Long> {
 	
-	@Query(value = "SELECT * FROM Club WHERE club_league = ?", nativeQuery = true)
-	List<Club> findClubByLeague(String clubLeague);
 
-	@Query(value = "SELECT * FROM Club WHERE club_location = ?", nativeQuery = true)
-	List<Club> findClubByLocation(String clubLocation);
+	List<Club> findClubByClubLeague(String clubLeague);
 
+	List<Club> findClubByClubLocation(String clubLocation);
 }
