@@ -8,11 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Data
+//@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Player {
@@ -48,5 +53,57 @@ public class Player {
 		this.playerPosition = playerPosition;
 		this.playerOverallRating = playerOverallRating;
 		this.club = club;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Player other = (Player) obj;
+		if (club == null) {
+			if (other.club != null)
+				return false;
+		} else if (!club.equals(other.club))
+			return false;
+		if (Double.doubleToLongBits(playerAge) != Double.doubleToLongBits(other.playerAge))
+			return false;
+		if (playerName == null) {
+			if (other.playerName != null)
+				return false;
+		} else if (!playerName.equals(other.playerName))
+			return false;
+		if (playerNationality == null) {
+			if (other.playerNationality != null)
+				return false;
+		} else if (!playerNationality.equals(other.playerNationality))
+			return false;
+		if (Double.doubleToLongBits(playerOverallRating) != Double.doubleToLongBits(other.playerOverallRating))
+			return false;
+		if (playerPosition == null) {
+			if (other.playerPosition != null)
+				return false;
+		} else if (!playerPosition.equals(other.playerPosition))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((club == null) ? 0 : club.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(playerAge);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((playerName == null) ? 0 : playerName.hashCode());
+		result = prime * result + ((playerNationality == null) ? 0 : playerNationality.hashCode());
+		temp = Double.doubleToLongBits(playerOverallRating);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((playerPosition == null) ? 0 : playerPosition.hashCode());
+		return result;
 	}
 }

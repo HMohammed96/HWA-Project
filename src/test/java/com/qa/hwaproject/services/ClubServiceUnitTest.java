@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -15,7 +15,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.qa.hwaproject.persistence.domain.Club;
+import com.qa.hwaproject.persistence.domain.Player;
 import com.qa.hwaproject.persistence.repos.ClubRepo;
+
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ClubServiceUnitTest {
@@ -25,6 +28,8 @@ public class ClubServiceUnitTest {
 	
 	@Mock
 	private ClubRepo repo;
+	
+	private	Club testClub = new Club("manchester united", "premier league", "england", "old trafford");
 	
 	@Test
 	public void addClubTest() {
@@ -52,7 +57,7 @@ public class ClubServiceUnitTest {
 
 	@Test
 	public void getByIdTest() {
-		Club output =  new Club(1, "real madrid", "la liga", "spain", "estadio santiago bernabeu");
+		Club output =  new Club(1L, "real madrid", "la liga", "spain", "estadio santiago bernabeu");
 		
 		Mockito.when(this.repo.findById(1L)).thenReturn(Optional.of(output));
 		
@@ -77,12 +82,17 @@ public class ClubServiceUnitTest {
 	
 	@Test
 	public void removeClubTest() {
+		this.service.addClub(testClub);
 		boolean exists = true;
 		
-		Mockito.when(this.repo.existsById(1L)).thenReturn(exists);
+		Mockito.when(this.repo.existsById(2L)).thenReturn(false);
+		assertTrue(this.service.removeClub(2L));
 		
-		assertTrue(this.service.removeClub(1L));
-		
-		Mockito.verify(this.repo, Mockito.times(1)).existsById(1L);
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(2L);
+	}
+	
+	@Test
+	public void simpleEqualsContract() {
+	    EqualsVerifier.simple().forClass(Player.class).verify();
 	}
 }
