@@ -1,14 +1,27 @@
 `use strict`;
 
-let inputField = document.querySelector("#inputField");
-let inputBtn = document.querySelector("#inputBtn");
+let clubNameField = document.querySelector("#clubNameField");
+let clubLeagueField = document.querySelector("#clubLeagueField");
+let clubLocationField = document.querySelector("#clubLocationField");
+let clubStadiumField = document.querySelector("#clubStadiumField");
+let addClubBtn = document.querySelector("#addClubBtn");
 
 let postData = () => {
-    let inputValue = inputField;
+    let clubNameValue = clubNameField.value;
+    let clubLeagueValue = clubLeagueField.value;
+    let clubLocationValue = clubLocationField.value;
+    let clubStadiumValue = clubStadiumField.value;
 
     let newClub = {
-        title: inputValue,
+        title: (clubNameValue, clubLeagueValue, clubLocationValue, clubStadiumValue),
+        body: ("manchester united", "premier league", "england", "old trafford"),
+        clubId: 1,
     }
+
+    postFetch(newClub);
+
+    return newClub
+  };
 
 // POST request - Creating data and pushing it into a database
 // POST request we also need to pass in a BODY of data
@@ -36,5 +49,5 @@ let postFetch = (object) => {
   
   // Event Listener ALWAYS GO AT BOTTOM
   
-  inputBtn.addEventListener('click', postData);
-}
+  addClubBtn.addEventListener('Click', postData);
+    console.log("Add button has been clicked!");
