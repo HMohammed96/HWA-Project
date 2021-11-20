@@ -1,6 +1,5 @@
 `use strict`;
 
-let clubIdField = document.querySelector("#clubIdField");
 let playerNameField = document.querySelector("#playerNameField");
 let playerAgeField = document.querySelector("#playerAgeField");
 let playerNationalityField = document.querySelector("#playerNationalityField");
@@ -9,7 +8,6 @@ let playerOverallRatingField = document.querySelector("#playerOverallRatingField
 let addPlayerBtn = document.querySelector("#addPlayerBtn");
 
 let postData = () => {
-    let clubIdValue = clubIdField.value;
     let playerNameValue = playerNameField.value;
     let playerAgeValue = playerAgeField.value;
     let playerNationalityValue = playerNationalityField.value;
@@ -17,8 +15,8 @@ let postData = () => {
     let playerOverallRatingValue = playerOverallRatingField.value;
 
     let newPlayer = {
-        title: (clubIdValue, playerNameValue, playerAgeValue, playerNationalityValue, playerPositionValue, playerOverallRatingValue),
-        body: (1, "marcus rashford", "23", "england", "striker", 85),
+        title: (playerNameValue, playerAgeValue, playerNationalityValue, playerPositionValue, playerOverallRatingValue),
+        body: ("marcus rashford", "23", "england", "striker", 85),
         playerId: 1,
     }
 

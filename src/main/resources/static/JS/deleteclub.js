@@ -1,20 +1,20 @@
 `use strict`;
 
-let id = document.querySelector("#clubIdField");
+let clubIdField = document.querySelector("#clubIdField");
 let deleteClubBtn = document.querySelector("#deleteClubBtn");
 
 let deleteData = () => {
-    let inputValue = id.value;
+    let clubIdValue = clubIdField.value;
 
     let newType
 };
 
-let deleteRequest = (id) => {
+let deleteRequest = (clubIdField) => {
 
-    fetch(`http://localhost:8080/club/delete/${id}`, {
+    fetch(`http://localhost:8080/club/delete/${clubIdField}`, {
         method : `DELETE` 
     }).then((response) => {
-        if(response.status !== 200){
+        if(response.status !== 204){
             console.error(`Status: ${response.statusText}`);
             return;
         }
