@@ -1,6 +1,6 @@
 Coverage: 81%
 
-# HWA-Project
+# HWA- Practical Project
 
 This is the README file of my HWA practical project which is a Hobby Web Application that provides an application which allows the user to Create, Read, Update and Delete a Football Club and Football Player. The relationship between the two entitiies consisted of many clubs having players while the players would be added to one club. As a result this meant a many to one relationship. To complete this application MySQL was used as the database management system to store the database and tables, then Java was used as the back-end programming language in Eclipse to write the codebase. HTML, CSS and JavaScript was web technologies used for the front-end.
 
