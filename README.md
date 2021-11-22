@@ -12,21 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-Version Control System: Git  
-
-Database Management System: MySQL Server 5.7 (local or GCP instance) 
-
-Back-End Programming Language: Java 
-
-API Development Platform: Spring  
-
-Front-End Web Technologies: HTML, CSS, JavaScript 
-
-Build Tool: Maven 
-
-Unit Testing: JUnit, Mockito 
-
-User-Acceptance Testing: Selenium 
+Git, MySQL Server 5.7 (local or GCP instance), Eclipse IDE, Maven, JUnit, Mockito, Selenium and Visual Code Studio.
 
 ### Installing
 
@@ -36,14 +22,6 @@ A step by step series of examples that tell you how to get a development env run
 2. By running the fat jar file in GitBash you would be able to run the spring boot application and use the CRUD Functionality to create, read, update and delete clubs or players.
 3. Open the folder of the project in your Eclipse IDE.
 4. Once the project has loaded you can then navigate through the multiple files in the project where you will find the methods and testing files, documentation also.
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ### Unit Tests 
 
