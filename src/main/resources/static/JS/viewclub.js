@@ -13,13 +13,15 @@ fetch('http://localhost:8080/club/getAll')
             console.log(data[25]);
 
             for(let obj of data){
-                // console.log(obj);
+                console.log(obj);
                 createListItem(obj);
             }
         }).catch((error) => {
             console.error(`${error}`);
         });
     });
+
+    let parentDiv = document.querySelector('#parentDiv');
 
     let createListItem = (data) => {
         
@@ -39,5 +41,9 @@ fetch('http://localhost:8080/club/getAll')
         listGroup.appendChild(newListItem);
         listGroup.appendChild(newListName);
         listGroup.appendChild(newListBody);
+
+        newListItem.appendChild(newListBody);
+
+        parentDiv.appendChild(newListItem);
 
     }

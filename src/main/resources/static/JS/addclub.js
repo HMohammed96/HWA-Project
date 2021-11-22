@@ -12,10 +12,17 @@ let postData = () => {
     let clubLocationValue = clubLocationField.value;
     let clubStadiumValue = clubStadiumField.value;
 
+    inputClubNameField.value = "";
+    inputClubLeagueField.value = "";
+    inputClubLocationField.value = "";
+    inputClubStadiumField.value = "";
+
     let newClub = {
-        title: (clubNameValue, clubLeagueValue, clubLocationValue, clubStadiumValue),
-        body: ("manchester united", "premier league", "england", "old trafford"),
-        clubId: 1,
+
+        clubName : `${clubNameValue}`,
+        clubLeague : `${clubLeagueValue}`,
+        clubLocation : `${clubLocationValue}`,
+        clubStadium : `${clubStadiumValue}`
     }
 
     postFetch(newClub);
@@ -29,13 +36,13 @@ let postData = () => {
 
 // This is the object we are creating to post to the backend
 
-let postFetch = (object) => {
+let postFetch = (newClub) => {
     fetch("http://localhost:8080/club/create", {
       method: "POST", // We are specifying we are POSTing data
       headers: {
         "Content-type": "application/JSON", // Telling the server we are sending JSON
       },
-      body: JSON.stringify(object), // We will be creating an object and passing it in here
+      body: JSON.stringify(newClub), // We will be creating an object and passing it in here
     }).then((response) => {
       if (response.status !== 201) {
         console.error(`Status: ${response.status}`);
