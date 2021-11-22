@@ -12,10 +12,18 @@ let putData = () => {
     let clubLocationValue = clubLocationField.value;
     let clubStadiumValue = clubStadiumField.value;
 
+    inputClubNameField.value = "";
+    inputClubLeagueField.value = "";
+    inputClubLocationField.value = "";
+    inputClubStadiumField.value = "";
+
     let newClub = {
-        title: (clubNameValue, clubLeagueValue, clubLocationValue, clubStadiumValue),
-        body: ("manchester city", "premier league", "england", "etihad"),
-        clubId: 1
+
+      clubName : `${clubNameValue}`,
+      clubLeague : `${clubLeagueValue}`,
+      clubLocation : `${clubLocationValue}`,
+      clubStadium : `${clubStadiumValue}`
+      
     }
 
     putFetch(newClub);
@@ -24,13 +32,13 @@ let putData = () => {
   };
 
 
-let putFetch = (object) => {
+let putFetch = (newClub) => {
     fetch("http://localhost:8080/club/update", {
       method: "PUT", // We are specifying we are PUTTing data
       headers: {
         "Content-type": "application/JSON", // Telling the server we are sending JSON
       },
-      body: JSON.stringify(object), 
+      body: JSON.stringify(newClub), 
     }).then((response) => {
       if (response.status !== 202) {
         console.error(`Status: ${response.status}`);

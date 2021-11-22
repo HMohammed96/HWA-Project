@@ -16,10 +16,22 @@ let putData = () => {
     let playerPositionValue = playerPositionField.value;
     let playerOverallRatingValue = playerOverallRatingField.value;
 
+    inputClubIdField.value = "";
+    inputPlayerNameField.value = "";
+    inputPlayerAgeField.value = "";
+    inputPlayerNationalityField.value = "";
+    inputPlayerPositionField.value = "";
+    inputPlayerOverallRatingField.value = "";
+
     let newPlayer = {
-        title: (clubIdValue, playerNameValue, playerAgeValue, playerNationalityValue, playerPositionValue, playerOverallRatingValue),
-        body: (1, "marcus rashford", "23", "england", "striker", 85),
-        playerId: 1
+
+      clubId : `${clubIdValue}`,
+      playerName : `${playerNameValue}`,
+      playerAge : `${playerAgeValue}`,
+      playerNationality : `${playerNationalityValue}`,
+      playerPosition : `${playerPositionValue}`,
+      playerOverallRating : `${playerOverallRatingValue}`
+
     }
 
     putFetch(newPlayer);
@@ -28,13 +40,13 @@ let putData = () => {
   };
 
 
-let putFetch = (object) => {
+let putFetch = (newPlayer) => {
     fetch("http://localhost:8080/player/update", {
       method: "PUT", // We are specifying we are PUTTing data
       headers: {
         "Content-type": "application/JSON", // Telling the server we are sending JSON
       },
-      body: JSON.stringify(object), 
+      body: JSON.stringify(newPlayer), 
     }).then((response) => {
       if (response.status !== 202) {
         console.error(`Status: ${response.status}`);

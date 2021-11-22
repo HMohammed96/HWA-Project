@@ -14,10 +14,20 @@ let postData = () => {
     let playerPositionValue = playerPositionField.value;
     let playerOverallRatingValue = playerOverallRatingField.value;
 
+    inputPlayerNameField.value = "";
+    inputPlayerAgeField.value = "";
+    inputPlayerNationalityField.value = "";
+    inputPlayerPositionField.value = "";
+    inputPlayerOverallRatingField.value = "";
+
     let newPlayer = {
-        title: (playerNameValue, playerAgeValue, playerNationalityValue, playerPositionValue, playerOverallRatingValue),
-        body: ("marcus rashford", "23", "england", "striker", 85),
-        playerId: 1,
+ 
+        playerName : `${playerNameValue}`,
+        playerAge : `${playerAgeValue}`,
+        playerNationality : `${playerNationalityValue}`,
+        playerPosition : `${playerPositionValue}`,
+        playerOverallRating : `${playerOverallRatingValue}`
+        
     }
 
     postFetch(newPlayer);

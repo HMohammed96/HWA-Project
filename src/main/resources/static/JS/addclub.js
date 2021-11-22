@@ -23,6 +23,7 @@ let postData = () => {
         clubLeague : `${clubLeagueValue}`,
         clubLocation : `${clubLocationValue}`,
         clubStadium : `${clubStadiumValue}`
+        
     }
 
     postFetch(newClub);
