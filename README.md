@@ -12,19 +12,30 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
+Version Control System: Git  
+
+Database Management System: MySQL Server 5.7 (local or GCP instance) 
+
+Back-End Programming Language: Java 
+
+API Development Platform: Spring  
+
+Front-End Web Technologies: HTML, CSS, JavaScript 
+
+Build Tool: Maven 
+
+Unit Testing: JUnit, Mockito 
+
+User-Acceptance Testing: Selenium 
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
+1. Firstly you would use Git to clone down the repository before creating your own development branch to work on.
+2. By running the fat jar file in GitBash you would be able to run the spring boot application and use the CRUD Functionality to create, read, update and delete clubs or players.
+3. Open the folder of the project in your Eclipse IDE.
+4. Once the project has loaded you can then navigate through the multiple files in the project where you will find the methods and testing files, documentation also.
 
 And repeat
 
@@ -34,13 +45,9 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system. Break down into which tests and what they do
-
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+These tests will test if the CRUD method function correctly and to run them you would use JUnit.
 
 	@Test
 	public void addPlayerTest() {
@@ -99,8 +106,9 @@ Explain what these tests test, why and how to run them
 		Mockito.verify(this.repo, Mockito.times(1)).existsById(2L);
 	}
 
-### Integration Tests 
-Explain what these tests test, why and how to run them
+### Integration Tests
+
+These tests will test if the CRUD method function correctly and to run them you would use JUnit.
 
 	@Test
 	void testAddClub() throws Exception {
@@ -165,17 +173,9 @@ Explain what these tests test, why and how to run them
 		this.mvc.perform(delete("/club/delete/1")).andExpect(status().isNoContent());
 	}
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy on the a live system the fatjar file will be required.
 
 ## Built With
 
